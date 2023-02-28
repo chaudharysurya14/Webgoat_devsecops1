@@ -22,10 +22,9 @@ pipeline {
                     -o "./" 
                     -s "./"
                     -f "ALL" 
-                    --prettyPrint''', odcInstallation: 'OWASP-DC 8.1.0'
+                    --prettyPrint''', odcInstallation: 'DP-Check'
 
                 dependencyCheckPublisher pattern: 'dependency-check-report.xml'
-		    sh './dependency_check_report.sh'
             }
         }
     
