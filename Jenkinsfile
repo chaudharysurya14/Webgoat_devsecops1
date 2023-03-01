@@ -31,9 +31,9 @@ pipeline {
     stage ('Static analysis') {
       steps {
         withSonarQubeEnv('sonarqube') {
-      sh" ${SCANNER_HOME**}**}/bin/sonar-scanner \
-      -Dsonar.projectKey=simple_webapp \
-      -Dsonar.sources=. "
+          sh 'mvn sonar:sonar'
+	      -Dsonar.projectKey=simple_webapp \
+	      -Dsonar.sources=. "
 	}
       }
     }
