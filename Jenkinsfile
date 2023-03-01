@@ -32,7 +32,7 @@ pipeline {
       steps {
         withSonarQubeEnv('sonarqube') {
           sh 'mvn sonar:sonar'
-        //sh 'sudo python3 report-task.txt'
+        //sh 'sudo python3 Devsecops.py'
 	}
       }
     }
