@@ -31,9 +31,10 @@ pipeline {
     stage ('Static analysis') {
       steps {
         withSonarQubeEnv('sonarqube') {
-          sh 'mvn clean package sonar:sonar'
-	//sh 'sudo python3 sonarqube.py'
-        }
+      sh" ${SCANNER_HOME**}**}/bin/sonar-scanner \
+      -Dsonar.projectKey=simple_webapp \
+      -Dsonar.sources=. "
+	}
       }
     }
   }
