@@ -30,7 +30,7 @@ pipeline {
     
     stage ('Static analysis') {
       steps {
-        withSonarQubeEnv('Devsecops') {
+        withSonarQubeEnv('sonarqube') {
           sh 'mvn clean package sonar:sonar'
         }
       }
