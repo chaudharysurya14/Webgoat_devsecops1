@@ -33,7 +33,6 @@ pipeline {
         withSonarQubeEnv('sonarqube') {
           sh 'mvn clean package sonar:sonar'
 	//sh 'sudo python3 sonarqube.py'
-	  sh './report-task.txt'
         }
       }
     }
