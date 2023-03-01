@@ -32,7 +32,7 @@ pipeline {
       steps {
         withSonarQubeEnv('sonarqube') {
           sh 'mvn sonar:sonar'
-	      -Dsonar.projectKey=simple_webapp \
+        //sh 'sudo python3 sonarqube.py'
 	}
       }
     }
