@@ -38,7 +38,7 @@ pipeline {
     }
     stage('Build') {
 
-            **dir('project-dir') {**
+            dir('project-dir') {
                 sh 'mvn clean install'
 
                 def pom = readMavenPom file:'pom.xml'
