@@ -36,16 +36,10 @@ pipeline {
 	}
       }
     }
-    stage('Build') {
-
-            dir('project-dir') {
-                sh 'mvn clean install'
-
-                def pom = readMavenPom file:'pom.xml'
-
-                print pom.version
-                env.version = pom.version
-            }
+    stage ('Generate build') {
+      steps {
+        sh '/root/Devsecops/Webgoat_devsecops1 mvn clean install -DskipTests'
+      }
     }
   }
 }
