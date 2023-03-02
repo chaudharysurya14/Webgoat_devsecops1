@@ -38,7 +38,7 @@ pipeline {
     }
     stage ('Generate build') {
       steps {
-        sh '/root/Devsecops/Webgoat_devsecops1 mvn clean install -DskipTests'
+        sh '/var/lib/jenkins/workspace/fetch_github_code mvn clean install -DskipTests'
       }
     }
   }
