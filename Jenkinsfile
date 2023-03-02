@@ -38,7 +38,7 @@ pipeline {
     }
     stage ('Generate build') {
       steps {
-        sh '/var/lib/jenkins/workspace/fetch_github_code mvn clean install -DskipTests'
+        sh 'mvn clean install -DskipTests'
       }
     }
   }
