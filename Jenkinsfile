@@ -38,7 +38,7 @@ pipeline {
     }
     stage ('Generate build') {
       steps {
-        sh 'mvn clean install -Dmaven.test.skip=true'
+        sh 'apt install maven'
       }
     }
   }
