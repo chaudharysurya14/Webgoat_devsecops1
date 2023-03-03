@@ -120,12 +120,12 @@
     <commons-text.version>1.9</commons-text.version>
     <guava.version>30.1-jre</guava.version>
     <jacoco.version>0.8.8</jacoco.version>
-    <java.version>11.0.18</java.version>
+    <java.version>17</java.version>
     <jjwt.version>0.9.1</jjwt.version>
     <jose4j.version>0.9.3</jose4j.version>
     <jquery.version>3.5.1</jquery.version>
     <jsoup.version>1.15.4</jsoup.version>
-    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+    <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
     <maven-failsafe-plugin.version>2.22.0</maven-failsafe-plugin.version>
     <maven-jar-plugin.version>3.1.2</maven-jar-plugin.version>
     <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
@@ -263,7 +263,8 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
-      <version>1.16.22</version>
+      <scope>provided</scope>
+      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>javax.xml.bind</groupId>
@@ -500,7 +501,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>3.9.0</version>
+        <version>${checkstyle.version}</version>
         <configuration>
           <encoding>UTF-8</encoding>
           <consoleOutput>true</consoleOutput>
@@ -574,7 +575,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.9.0</version>
+        <version>3.0.0</version>
         <executions>
           <execution>
             <id>restrict-log4j-versions</id>
@@ -599,8 +600,8 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>11.0.18</source>
-          <target>11.0.18</target>
+          <source>17</source>
+          <target>17</target>
         </configuration>
       </plugin>
     </plugins>
