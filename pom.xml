@@ -500,7 +500,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>${checkstyle.version}</version>
+        <version>3.9.0</version>
         <configuration>
           <encoding>UTF-8</encoding>
           <consoleOutput>true</consoleOutput>
@@ -574,7 +574,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.0.0</version>
+        <version>3.9.0</version>
         <executions>
           <execution>
             <id>restrict-log4j-versions</id>
@@ -599,8 +599,8 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>17</source>
-          <target>17</target>
+          <source>11.0.18</source>
+          <target>11.0.18</target>
         </configuration>
       </plugin>
     </plugins>
