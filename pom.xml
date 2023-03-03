@@ -120,7 +120,7 @@
     <commons-text.version>1.9</commons-text.version>
     <guava.version>30.1-jre</guava.version>
     <jacoco.version>0.8.8</jacoco.version>
-    <java.version>17</java.version>
+    <java.version>11.0.18</java.version>
     <jjwt.version>0.9.1</jjwt.version>
     <jose4j.version>0.9.3</jose4j.version>
     <jquery.version>3.5.1</jquery.version>
