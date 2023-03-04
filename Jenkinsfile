@@ -36,9 +36,12 @@ pipeline {
 	}
       }
     }
-    stage ('Generate build') {
-      steps {
-        sh 'mvn clean install'
+    stage ('Deploy to server') {
+            steps {
+           sshagent(['application_server']) {
+                sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/webgoat-webgoat-server-v8.2.0-SNAPSHOT.jar ubuntu@65.2.191.49:/WebGoat'
+                sh 'ssh -o  StrictHostKeyChecking=no ubuntu@65.2.191.49 "nohup java -jar /WebGoat/webgoat-server-v8.2.0-SNAPSHOT.jar &"'
+        }
       }
     }
   }
