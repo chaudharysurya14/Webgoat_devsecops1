@@ -30,7 +30,7 @@ pipeline {
     
     stage ('Static analysis') {
       steps {
-        withSonarQubeEnv('sonarqube') {
+        withSonarQubeEnv('sonar') {
           sh 'mvn sonar:sonar'
         //sh 'sudo python3 Devsecops.py'
 	}
