@@ -35,17 +35,11 @@ pipeline {
         //sh 'sudo python3 Devsecops.py'
 	}
       }
-    }
-    stage ('Generate build') {
-      steps {
-        sh 'mvn clean install -DskipTests'
-      }
     } 
-    stage ('Deploy to server') {
+    stage ('Send jar file to app_server') {
             steps {
            sshagent(['application_server']) {
-                sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/DemoProject/webgoat-server/target/webgoat-server-v8.2.0-SNAPSHOT.jar ubuntu@65.2.191.49:/WebGoat'
-                sh 'ssh -o  StrictHostKeyChecking=no ubuntu@65.2.191.49 "nohup java -jar /WebGoat/webgoat-server-v8.2.0-SNAPSHOT.jar &"'
+                sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_webgoat_devsecops/target/webgoat-server-v8.2.0-SNAPSHOT.jar ubuntu@52.66.211.223:~/WebGoat'
            } 
             }
     }
