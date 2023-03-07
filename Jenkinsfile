@@ -35,6 +35,11 @@ pipeline {
         //sh 'sudo python3 Devsecops.py'
 	}
       }
-    } 
+    }
+    stage ('Generate build') {
+      steps {
+        sh 'mvn clean install -DskipTests'
+      }
+    }
   }  
 }
