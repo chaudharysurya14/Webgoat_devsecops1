@@ -36,10 +36,12 @@ pipeline {
 	}
       }
     }
-    stage ('Generate build') {
-      steps {
-        sh 'mvn clean install -DskipTests'
-      }
+    stage ('Fetch Application server') {
+            steps {
+           sshagent(['application_server']) {
+                sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_webgoat_devsecops/target/webgoat-server-v8.2.0-SNAPSHOT.jar ubuntu@13.127.144.22:~/WebGoat'
+           } 
+            }
     }
   }  
 }
