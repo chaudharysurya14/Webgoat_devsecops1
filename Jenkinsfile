@@ -27,6 +27,11 @@ pipeline {
                 dependencyCheckPublisher pattern: 'dependency-check-report.xml'
             }
         }
+	stage ('Host vulnerability assessment') {
+         steps {
+           sh 'echo "In-Progress"'
+         }
+   	}
     
     stage ('Static analysis') {
       steps {
