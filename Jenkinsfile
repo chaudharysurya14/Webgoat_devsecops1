@@ -57,11 +57,5 @@ pipeline {
               }
            }
     }
-    stage ('Incidents report') {
-        steps {
-        sh 'echo "Final Report"'
-         sh './final_report.sh'
-        }
-    }
   }  
 }
