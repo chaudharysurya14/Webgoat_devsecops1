@@ -39,14 +39,14 @@ pipeline {
     stage ('Fetch Application server') {
             steps {
            sshagent(['application_server']) {
-                sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_webgoat_devsecops/target/webgoat-server-v8.2.0.jar ubuntu@13.235.24.37:~/WebGoat'
+                sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/pipeline_webgoat_devsecops/target/webgoat-server-v8.2.0.jar ubuntu@65.0.182.0:~/WebGoat'
            } 
             }
     }
     stage ('Deploy to Application server') {
             steps {
            sshagent(['application_server']) {
-                sh 'ssh -o  StrictHostKeyChecking=no ubuntu@13.235.24.37 "nohup java -jar /WebGoat/webgoat-server-v8.2.0.jar --server.address=0.0.0.0 --server.port=8081 &"'
+                sh 'ssh -o  StrictHostKeyChecking=no ubuntu@65.0.182.0 "nohup java -jar /WebGoat/webgoat-server-v8.2.0.jar --server.address=0.0.0.0 --server.port=8081 &"'
            } 
             }
     }
